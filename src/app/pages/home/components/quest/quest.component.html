@@ -1,0 +1,18 @@
+<div class="content">
+    <strong>QUÊTES</strong>
+    <div class="container">
+      <div class="quest" *ngFor="let quest of quests"> <!-- Boucle sur les quêtes -->
+        <div class="quest-info">
+          <p class="quest-name">{{ quest.name }}</p>
+          <p class="quest-progress">{{ quest.progress }} / {{ quest.total }}</p>
+        </div>
+        <div class="progress-bar">
+          <div 
+            class="progress" 
+            [ngStyle]="{ width: (quest.progress / quest.total * 100) + '%' }">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

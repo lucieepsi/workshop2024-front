@@ -15,7 +15,7 @@ import { Router, RouterLink } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
   providers: [
-    HttpService 
+    HttpService
   ]
 })
 
@@ -24,11 +24,13 @@ export class LoginComponent {
   password: string = '';
   errorMessage: string = '';
 
-  constructor(private httpService: HttpService, private router:Router) { }
+  constructor(private httpService: HttpService, private router: Router) { }
 
   onSubmit(): void {
     this.httpService.login(this.name, this.password).subscribe({
       next: (response) => {
+        localStorage.setItem('email', this.name);
+        console.log(response);
         this.router.navigate(['/home']);
       },
       error: (err) => {
@@ -37,4 +39,3 @@ export class LoginComponent {
     });
   }
 }
-
