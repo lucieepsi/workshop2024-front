@@ -1,19 +1,10 @@
-<div class="login-container">
-    <h2>Connexion</h2>
-    <form (ngSubmit)="onSubmit()">
-      <div>
-        <label for="name">Nom :</label>
-        <input type="text" id="name" [(ngModel)]="name" name="name" required>
-      </div>
-      <div>
-        <label for="password">Mot de passe :</label>
-        <input type="password" id="password" [(ngModel)]="password" name="password" required>
-      </div>
-      <button type="submit">Se connecter</button>
+<div class="content">
+  <div class="cardlogin">
+    <form class="login" action="#" (ngSubmit)="onSubmit()">
+      <img src="assets/images/logo.png" alt="logo" class="logo"/>
+      <input id="userLogin" type="email" placeholder="Email" [(ngModel)]="name" name="name"/>
+      <input id="userPassword" type="password" placeholder="Mot de passe" [(ngModel)]="password" name="password"/>
+      <button id="signInButton" type="submit" class="button">connexion</button>
     </form>
-  
-    <div *ngIf="errorMessage" class="error">
-      {{ errorMessage }}
-    </div>
   </div>
-  
+</div>

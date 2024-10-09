@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { HttpService } from '../../core/services/http-service.service';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -24,16 +24,14 @@ export class LoginComponent {
   password: string = '';
   errorMessage: string = '';
 
-  constructor(private httpService: HttpService) { }
+  constructor(private httpService: HttpService, private router:Router) { }
 
   onSubmit(): void {
     this.httpService.login(this.name, this.password).subscribe({
       next: (response) => {
-        console.log('Connexion réussie', response);
-        alert('Connexion réussie');
+        this.router.navigate(['/home']);
       },
       error: (err) => {
-        console.log('Erreur de connexion', err);
         this.errorMessage = 'Connexion échouée : identifiants incorrects.';
       }
     });
