@@ -1,0 +1,7 @@
+{
+  "name": "workshop2024-front",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
