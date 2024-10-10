@@ -1,0 +1,23 @@
+<div class="content">
+  <strong>PERFORMANCE</strong>
+  <div class="container">
+    <p>Cette semaine</p>
+    <div *ngIf="averageData">
+      <div class="kcal">
+        <apx-chart [series]="tourChartOptions.series" [chart]="tourChartOptions.chart" [xaxis]="tourChartOptions.xaxis"
+          [tooltip]="tourChartOptions.tooltip">
+        </apx-chart>
+        <p *ngIf="averageData"><strong>{{ averageData.averageCalories }}</strong> kcal</p>
+      </div>
+      <div class="km">
+        <apx-chart [series]="calorieChartOptions.series" [chart]="calorieChartOptions.chart"
+          [xaxis]="calorieChartOptions.xaxis" [tooltip]="calorieChartOptions.tooltip">
+        </apx-chart>
+        <p *ngIf="averageData"><strong>{{ averageData.averageDistance }}</strong> km</p>
+      </div>
+    </div>
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+  </div>
+</div>
