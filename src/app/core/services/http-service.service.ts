@@ -34,4 +34,23 @@ export class HttpService {
   getTopUsersByPoints(): Observable<any> {
     return this.http.get(`${environment.apiUrlBack}/user/topPoints`);
   }
+
+  getLastSession(email: string): Observable<any> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    const url = `${environment.apiUrlBack}/sessions/last`;
+    const loginData = {
+      email: email
+    };
+
+    return this.http.post(url, loginData, {  headers });
+  }
+
+  getQuests(email: string): Observable<any> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    const url = `${environment.apiUrlBack}/landings/quests`;
+    const loginData = {
+      email: email
+    };
+    return this.http.post(url, loginData, {  headers });
+  }
 }

@@ -20,8 +20,8 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['/home']);
   }
 
-  goToSuivis() {
-    this.router.navigate(['/suivis']);
+  goToSession() {
+    this.router.navigate(['/session']);
   }
 
   goToClassement(){

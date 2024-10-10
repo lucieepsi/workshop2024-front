@@ -78,7 +78,7 @@ export class HightlightsComponent implements OnInit {
         events: {
           dataPointSelection: (event, chartContext, { dataPointIndex }) => {
             this.daysVisible = !this.daysVisible; 
-            this.showValues = true;  // Activer l'affichage des valeurs après clic
+            this.showValues = true;  
             this.calorieChartOptions.xaxis.categories = this.daysVisible ? 
               ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'] : [];
           }
@@ -111,10 +111,8 @@ export class HightlightsComponent implements OnInit {
       this.httpService.getCurrentWeekAverage(email).subscribe({
         next: (data: AverageModel) => {
           this.averageData = data;
-          console.log(this.averageData);
-          
           this.tourChartOptions.series[0].data = [10, 12, 15, 8, 20, 14, 18]; 
-          this.calorieChartOptions.series[0].data = [500, 600, 550, 700, 800, 650, 600]; // Remplacer par les données réelles pour les calories
+          this.calorieChartOptions.series[0].data = [500, 600, 550, 700, 800, 650, 600]; 
         },
         error: (err) => {
           this.errorMessage = 'Erreur lors de la récupération des données.';

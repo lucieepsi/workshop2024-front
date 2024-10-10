@@ -1,0 +1,30 @@
+<div class="content">
+  <h3 class="session-title">
+    <i class="fas" [ngClass]="isToday(lastSession.sessionDate) ? 'fa-sun' : 'fa-clock'"></i>
+    {{ isToday(lastSession.sessionDate) ? 'Session du jour' : 'Dernière Session' }} 
+    <i class="fas fa-calendar"></i>
+  </h3>
+
+  <div class="session-info">
+    <p><strong>{{ lastSession.sessionDate | date: 'dd/MM/yyyy' }}</strong> session</p>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat-box">
+      <p class="stat-value">{{ lastSession.distance }}</p>
+      <p class="stat-label">Tours Complétés</p>
+    </div>
+    <div class="stat-box">
+      <p class="stat-value">{{ lastSession.calories }}</p>
+      <p class="stat-label">Calories Brulées</p>
+    </div>
+    <div class="stat-box">
+      <p class="stat-value">{{ (lastSession.distance * 2.65) / 1000 }}</p>
+      <p class="stat-label">Kilomètres parcourus</p>
+    </div>
+    <div class="stat-box">
+      <p class="stat-value">{{ calculateAverageSpeed(lastSession.startTime, lastSession.distance) }}</p>
+      <p class="stat-label">Vitesse moyenne (Km/h)</p>
+    </div>
+  </div>
+</div>

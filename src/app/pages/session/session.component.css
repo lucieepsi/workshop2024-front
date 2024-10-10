@@ -1,0 +1,57 @@
+.content {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	background-color: #F2F2F2;
+    align-items: center;
+    text-align: center;
+  }
+
+.session-title {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.session-info {
+    background-color: #ffffff;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.stat-box {
+    background-color: #92BBF3;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0;
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: #ffffff;
+    margin-top: 5px;
+}
