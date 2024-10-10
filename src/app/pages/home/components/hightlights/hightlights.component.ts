@@ -111,8 +111,8 @@ export class HightlightsComponent implements OnInit {
       this.httpService.getCurrentWeekAverage(email).subscribe({
         next: (data: AverageModel) => {
           this.averageData = data;
-          this.tourChartOptions.series[0].data = [10, 12, 15, 8, 20, 14, 18]; 
-          this.calorieChartOptions.series[0].data = [500, 600, 550, 700, 800, 650, 600]; 
+          this.tourChartOptions.series[0].data = [600, 200, 500, 400, 300, 200, 600]; 
+          this.calorieChartOptions.series[0].data = [10, 12, 15, 8, 20, 14, 18]; 
         },
         error: (err) => {
           this.errorMessage = 'Erreur lors de la récupération des données.';

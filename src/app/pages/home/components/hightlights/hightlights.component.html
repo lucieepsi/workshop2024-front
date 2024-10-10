@@ -7,13 +7,13 @@
         <apx-chart [series]="tourChartOptions.series" [chart]="tourChartOptions.chart" [xaxis]="tourChartOptions.xaxis"
           [tooltip]="tourChartOptions.tooltip">
         </apx-chart>
-        <p *ngIf="averageData"><strong>{{ averageData.averageCalories }}</strong> kcal</p>
+        <p *ngIf="averageData"><strong>{{ (averageData.averageCalories).toFixed(3) }}</strong> kcal</p>
       </div>
       <div class="km">
         <apx-chart [series]="calorieChartOptions.series" [chart]="calorieChartOptions.chart"
           [xaxis]="calorieChartOptions.xaxis" [tooltip]="calorieChartOptions.tooltip">
         </apx-chart>
-        <p *ngIf="averageData"><strong>{{ averageData.averageDistance }}</strong> km</p>
+        <p *ngIf="averageData"><strong>{{ (averageData.averageDistanceKm).toFixed(3)}}</strong> km</p>
       </div>
     </div>
     <div *ngIf="errorMessage" class="error-message">
